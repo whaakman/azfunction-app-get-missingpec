@@ -1,0 +1,4 @@
+# Detecting missing Partner Earned Credits through Azure Cost Management APIs
+Full post on: https://www.wesleyhaakman.org/azure-costmanagement-queries-partner-earned-credits/
+
+In my use case I needed to automate the detection of customers that contained resources where Partner Earned Credits weren't applied. Getting the actual resource in question is a completely different story and requires you to query the usageDetails API which is a part of the Microsoft.Consumption resource provider. It will provide a lot of information and provide you with the ability to filter out whether the item in question is a market place item and how many Partner Earned Credits you are actually receiving.  The downside of this API is that it generates a lot of data and querying it over all your customers is going to take a couple of hours (in case of a reasonbly sized CSP).
